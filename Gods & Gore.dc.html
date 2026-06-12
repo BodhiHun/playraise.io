@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 30px oklch(0.72 0.15 85 / 0.20); }
+      50%       { box-shadow: 0 0 55px oklch(0.72 0.15 85 / 0.45); }
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<!-- ═══════════════════════════════════════════════════ HERO ══ -->
+<div style="position:relative; width:100%; min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+
+  <!-- BG Image -->
+  <div style="position:absolute; inset:0; background:url('uploads/blank background.png') center top / cover no-repeat; z-index:0;"></div>
+
+  <!-- Gradient: darken for text readability -->
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg,
+    oklch(0.07 0.02 40 / 0.40) 0%,
+    oklch(0.07 0.02 40 / 0.50) 40%,
+    oklch(0.07 0.02 40 / 0.80) 75%,
+    oklch(0.07 0.02 40 / 0.97) 100%); z-index:1;"></div>
+
+  <!-- Content: logo + tagline + CTA, all centered -->
+  <div style="position:relative; z-index:2; text-align:center; padding:clamp(32px,5vw,64px) 24px clamp(48px,7vw,80px); display:flex; flex-direction:column; align-items:center; animation:fadeUp 0.9s ease both; max-width:700px; width:100%;">
+
+    <img src="uploads/logo.png" alt="Gods &amp; Gore" style="width:min(480px,70vw); height:auto; display:block; margin-bottom:clamp(10px,1.8vw,18px);" />
+
+    <p style="font-family:'Outfit',sans-serif; font-size:clamp(10px,1.3vw,13px); font-weight:500; letter-spacing:0.42em; text-transform:uppercase; color:oklch(0.72 0.15 85); margin-bottom:clamp(14px,2vw,20px);">Now Available on Steam</p>
+
+    <p style="font-family:'Outfit',sans-serif; font-size:clamp(16px,2.2vw,22px); font-weight:300; color:oklch(0.90 0.03 78); max-width:540px; line-height:1.65; margin-bottom:clamp(32px,4.5vw,48px); text-wrap:pretty;">A roguelike tower defense set in Greek mythology. Pick your god, collect mythological creatures, and defend your city, one card at a time.</p>
+
+    <!-- Steam CTA -->
+    <a href="https://store.steampowered.com/app/4300870/Gods__Gore/" target="_blank" rel="noopener noreferrer"
+       style="display:inline-flex; align-items:center; background:oklch(0.18 0.02 220); color:oklch(0.97 0.01 80); font-family:'Outfit',sans-serif; font-size:clamp(14px,1.7vw,17px); font-weight:600; text-decoration:none; padding:clamp(14px,2vw,18px) clamp(28px,4vw,48px); border-radius:3px; letter-spacing:0.10em; text-transform:uppercase; border:1px solid oklch(0.40 0.03 220); transition:background 0.2s, transform 0.2s; animation:pulse-glow 3s ease-in-out 1.2s infinite;"
+       style-hover="background:oklch(0.26 0.03 220); transform:translateY(-3px); box-shadow:0 12px 50px oklch(0.18 0.02 220 / 0.6) !important; animation:none !important;">
+      Play on Steam
+    </a>
+  </div>
+
+  <!-- Scroll hint -->
+  <div style="position:absolute; bottom:clamp(18px,2.5vw,28px); left:50%; animation:bob 2.2s ease-in-out infinite; z-index:2; display:flex; flex-direction:column; align-items:center; gap:6px; opacity:0.38;">
+    <span style="font-family:'Outfit',sans-serif; font-size:10px; color:white; letter-spacing:0.3em; text-transform:uppercase;">Scroll</span>
+    <svg width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M1 1l6 6 6-6" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ FEATURES ══ -->
+<div style="background:oklch(0.09 0.025 35); padding:clamp(64px,8vw,110px) clamp(20px,5vw,48px);">
+  <div style="max-width:1080px; margin:0 auto;">
+
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:clamp(44px,6vw,72px);">
+      <div style="flex:1; height:1px; background:oklch(0.72 0.15 85 / 0.22);"></div>
+      <p style="font-family:'Cinzel',serif; font-size:11px; font-weight:700; color:oklch(0.72 0.15 85); letter-spacing:0.40em; text-transform:uppercase; white-space:nowrap;">How You Play</p>
+      <div style="flex:1; height:1px; background:oklch(0.72 0.15 85 / 0.22);"></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,280px),1fr)); gap:clamp(20px,3vw,36px);">
+
+      <!-- COMMAND -->
+      <div style="border:1px solid oklch(0.72 0.15 85 / 0.13); border-top:2px solid oklch(0.72 0.15 85); padding:clamp(24px,3vw,36px); background:oklch(0.115 0.022 38);">
+        <p style="font-family:'Cinzel',serif; font-size:11px; font-weight:700; color:oklch(0.72 0.15 85); letter-spacing:0.35em; text-transform:uppercase; margin-bottom:14px;">Command</p>
+        <h3 style="font-family:'Cinzel',serif; font-size:clamp(17px,1.9vw,21px); font-weight:700; color:oklch(0.95 0.02 80); margin-bottom:14px; line-height:1.25;">Collect Mythological Creatures</h3>
+        <p style="font-family:'Outfit',sans-serif; font-size:clamp(13px,1.4vw,15px); font-weight:300; color:oklch(0.58 0.04 65); line-height:1.80; text-wrap:pretty;">Zeus' golden eagle, minotaurs, and more. Your creatures persist between runs and level up, growing stronger with every attempt.</p>
+      </div>
+
+      <!-- BUILD -->
+      <div style="border:1px solid oklch(0.50 0.18 25 / 0.20); border-top:2px solid oklch(0.50 0.18 25); padding:clamp(24px,3vw,36px); background:oklch(0.115 0.022 38);">
+        <p style="font-family:'Cinzel',serif; font-size:11px; font-weight:700; color:oklch(0.50 0.18 25); letter-spacing:0.35em; text-transform:uppercase; margin-bottom:14px;">Build</p>
+        <h3 style="font-family:'Cinzel',serif; font-size:clamp(17px,1.9vw,21px); font-weight:700; color:oklch(0.95 0.02 80); margin-bottom:14px; line-height:1.25;">Draft Cards, Fortify Your City</h3>
+        <p style="font-family:'Outfit',sans-serif; font-size:clamp(13px,1.4vw,15px); font-weight:300; color:oklch(0.58 0.04 65); line-height:1.80; text-wrap:pretty;">Each wave, draft powerful building cards: towers, barracks, walls, boosters. Create chokepoints, stack upgrades, and turn your city into a fortress. No two runs are the same.</p>
+      </div>
+
+      <!-- DEFEND -->
+      <div style="border:1px solid oklch(0.55 0.12 70 / 0.18); border-top:2px solid oklch(0.55 0.12 70); padding:clamp(24px,3vw,36px); background:oklch(0.115 0.022 38);">
+        <p style="font-family:'Cinzel',serif; font-size:11px; font-weight:700; color:oklch(0.55 0.12 70); letter-spacing:0.35em; text-transform:uppercase; margin-bottom:14px;">Defend</p>
+        <h3 style="font-family:'Cinzel',serif; font-size:clamp(17px,1.9vw,21px); font-weight:700; color:oklch(0.95 0.02 80); margin-bottom:14px; line-height:1.25;">Survive Endless Waves</h3>
+        <p style="font-family:'Outfit',sans-serif; font-size:clamp(13px,1.4vw,15px); font-weight:300; color:oklch(0.58 0.04 65); line-height:1.80; text-wrap:pretty;">Barbarians, berserkers, brutes, and legendary giants. Each wave hits harder. Upgrade towers, send warriors, and command your creatures across multiple mythological regions.</p>
+      </div>
+
+    </div>
+
+    <!-- Feature list -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px 32px; margin-top:clamp(44px,5vw,64px); padding-top:clamp(36px,4vw,52px); border-top:1px solid oklch(1 0 0 / 0.07);">
+      <sc-for list="{{ features }}" as="feat" hint-placeholder-count="4">
+        <div style="display:flex; align-items:flex-start; gap:10px;">
+          <div style="width:5px; height:5px; border-radius:50%; background:oklch(0.72 0.15 85); margin-top:7px; flex-shrink:0;"></div>
+          <p style="font-family:'Outfit',sans-serif; font-size:clamp(13px,1.3vw,14px); font-weight:400; color:oklch(0.62 0.04 68); line-height:1.6;">{{ feat }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════ FINAL CTA ══ -->
+<div style="position:relative; overflow:hidden; background:oklch(0.07 0.03 30); padding:clamp(72px,10vw,120px) clamp(20px,5vw,48px); text-align:center; border-top:1px solid oklch(0.50 0.18 25 / 0.30);">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:320px; background:radial-gradient(ellipse, oklch(0.40 0.14 30 / 0.18) 0%, transparent 70%); pointer-events:none;"></div>
+
+  <div style="position:relative; max-width:620px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(28px,6vw,60px); font-weight:900; color:oklch(0.97 0.015 80); margin-bottom:clamp(32px,4vw,48px); line-height:1.1; text-wrap:pretty;">How long can your city stand?</h2>
+    <a href="https://store.steampowered.com/app/4300870/Gods__Gore/" target="_blank" rel="noopener noreferrer"
+       style="display:inline-flex; align-items:center; gap:12px; background:oklch(0.72 0.15 85); color:oklch(0.09 0.025 35); font-family:'Outfit',sans-serif; font-size:clamp(14px,1.7vw,17px); font-weight:700; text-decoration:none; padding:clamp(14px,2vw,18px) clamp(32px,5vw,56px); border-radius:3px; letter-spacing:0.12em; text-transform:uppercase; transition:background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow:0 6px 40px oklch(0.72 0.15 85 / 0.28);"
+       style-hover="background:oklch(0.80 0.14 85); transform:translateY(-3px); box-shadow:0 12px 50px oklch(0.72 0.15 85 / 0.48) !important;">
+      Get It on Steam
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ FOOTER ══ -->
+<div style="background:oklch(0.065 0.02 35); padding:24px; text-align:center; border-top:1px solid oklch(1 0 0 / 0.05);">
+  <p style="font-family:'Outfit',sans-serif; font-size:12px; font-weight:400; color:oklch(0.35 0.02 60); letter-spacing:0.08em;">© 2026 Gods &amp; Gore · All rights reserved</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      features: [
+        "Card-based building system with infinite stacking upgrades",
+        "Creature collection that persists and levels up across runs",
+        "Multiple gods with unique powers and abilities",
+        "Escalating waves across multiple mythological regions",
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
